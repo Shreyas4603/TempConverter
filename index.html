@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tempertaure</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Temperature Converter</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="from">
+            <p style="text-align: left;">From</p>
+            <select id="from_unit" onchange="convertTemperature()">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+            <input class="ip" type="number" id="temperature" placeholder="Enter temperature" step="0.01" oninput="convertTemperature()">
+        </div>
+        <button id="change" onclick="switchUnits()">Switch</button>
+        <div class="to from">
+            <p style="text-align: left;">To</p>
+            <select id="to_unit" onchange="convertTemperature()">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+            <input class="ip" type="number" id="result" placeholder="Result" step="0.01" disabled>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
